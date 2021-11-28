@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Full Groom",
+    "description": "Includes ear cleaning, teeth brushing and intimate hygiene trims",
+    "price": "£55-£70"
+  },
+  {
+    "title": "Wash & Blow Dry",
+    "description": "Includes Shampoo and conditioner using our own products",
+    "price": "£30-£45"
+  },
+  {
+    "title": "Strawberry Smooches Shampoo",
+    "price": "£14"
+  },
+  {
+    "title": "Kiwi Kisses Conditioner",
+    "price": "£18"
+  }
+]

@@ -185,6 +185,15 @@ const Gallery = () => {
                     </Box>
                     <Box>
                         <Image
+                            {...portfolio10}
+                            placeholder="blur"
+                            layout="responsive"
+                            width={portfolio10.width}
+                            height={portfolio10.height}
+                        />
+                    </Box>
+                    <Box>
+                        <Image
                             {...portfolio11}
                             placeholder="blur"
                             layout="responsive"

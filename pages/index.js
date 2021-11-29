@@ -9,10 +9,12 @@ import Dog3 from '../public/dog3.jpg'
 import Dog4 from '../public/dog4.jpg'
 import Dog5 from '../public/dog5.jpg'
 import Dog6 from '../public/dog6.jpg'
+import Pattern from '../public/white paws pattern-8.png'
 import services from '../utils/servicesList.json'
 import {Service} from "../components/Services";
 import {PawPrint} from "../components/icons";
 import {useState} from "react";
+import {useRouter} from "next/router";
 
 export default function Home() {
   return (
@@ -56,32 +58,37 @@ const Banner = () => {
 }
 
 const ServicesSection = () => {
+    const router = useRouter()
+
+    const handleClick = () => {
+        router.push('/services-and-products')
+    }
     return (
-        <Box sx={{ position: 'relative', borderBottom: 'solid 50px #C7DDD9' }} bgcolor='secondary.light'>
+        <Box sx={{ position: 'relative', zIndex: 1 }} bgcolor='secondary.light'>
             <Grid container>
-                <Grid item xs={12} md={6}>
-                    <Box sx={{ maxWidth: { xs: 'none', md: 'sm' }, marginLeft: 'auto', pl: 4, py: 10, pr: 2 }} >
-                        <Typography variant='h3'>
-                            Our Services & Products
-                        </Typography>
-                        <Box pt={3}>
-                            <Service items={services} />
+                    <Grid item xs={12} md={6}>
+                        <Box sx={{ maxWidth: { xs: 'none', md: 'sm' }, marginLeft: 'auto', pl: 4, py: 10, pr: 2 }} >
+                            <Typography variant='h3'>
+                                Our Services & Products
+                            </Typography>
+                            <Box pt={3}>
+                                <Service items={services} />
+                            </Box>
+                            <Button onClick={handleClick} color='primary' variant='contained' sx={{ m: 6, float: 'right' }}>
+                                See all services and products
+                            </Button>
                         </Box>
-                        <Button a='/services-and-products' color='primary' variant='contained' sx={{ m: 6, float: 'right' }}>
-                            See all services and products
-                        </Button>
-                    </Box>
+                    </Grid>
+                    <Grid item xs={6} sx={{ marginBottom: '-30px', height: 'max-content', filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))', borderRadius: '0px 0px 0px 10%', overflow: 'hidden', background: '#e3dac9', display: { xs: 'none', md: 'block' }}} >
+                        <Image
+                            placeholder="blur"
+                            {...Shampoo}
+                            width={Shampoo.width}
+                            height={Shampoo.height}
+                            layout="responsive"
+                        />
+                    </Grid>
                 </Grid>
-                <Grid item xs={6} sx={{ marginBottom: '-30px', height: 'max-content', filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))', borderRadius: '0px 0px 0px 10%', overflow: 'hidden', background: '#e3dac9', display: { xs: 'none', md: 'block' }}} >
-                    <Image
-                              placeholder="blur"
-                        {...Shampoo}
-                        width={Shampoo.width}
-                        height={Shampoo.height}
-                        layout="responsive"
-                    />
-                </Grid>
-            </Grid>
         </Box>
     )
 }
@@ -108,9 +115,10 @@ const SocialSection = () => {
     }
 
     return (
-        <Box bgcolor='#C7DDD9' paddingBottom={6}>
+        <Box bgcolor='#C7DDD9' py={6} sx={{ position: 'relative' }}>
+            <Box sx={{ backgroundImage: `url('${Pattern.src}')`, opacity: 0.18, height: '100%', width: '100%', position: 'absolute', zIndex: 0, top: 0}} />
             <Container>
-                <Grid container alignItems='flex-end' >
+                <Grid container alignItems='flex-end' sx={{ position: 'relative'}} >
                     <Grid item xs={12} md={6}>
                         <Box bgcolor='white' borderRadius={3} boxShadow={2} p={4} m={5}>
                             <Typography variant='body1'>

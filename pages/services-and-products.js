@@ -15,13 +15,18 @@ import portfolio8 from '../public/portfolio/julio-bernal-pwRfs5IT6Go-unsplash.jp
 import portfolio9 from '../public/portfolio/julio-bernal-qeY2QHAZfU0-unsplash.jpg'
 import portfolio10 from '../public/portfolio/julio-bernal-WLGx0fKFSeI-unsplash.jpg'
 import portfolio11 from '../public/portfolio/karsten-winegeart-T7Hxkhv23yY-unsplash.jpg'
+import {motion} from "framer-motion";
 
 export default function ServicesAndProducts() {
     return (
-            <>
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+        >
                 <Banner />
                 <Gallery/>
-            </>
+        </motion.div>
     )
 }
 

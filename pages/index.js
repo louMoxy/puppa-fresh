@@ -15,14 +15,19 @@ import {Service} from "../components/Services";
 import {PawPrint} from "../components/icons";
 import {useState} from "react";
 import {useRouter} from "next/router";
+import {motion} from "framer-motion";
 
 export default function Home() {
   return (
-        <>
+      <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+      >
             <Banner />
             <ServicesSection />
             <SocialSection />
-        </>
+      </motion.div>
   )
 }
 
@@ -65,7 +70,7 @@ const ServicesSection = () => {
     }
     return (
         <Box sx={{ position: 'relative', zIndex: 1 }} bgcolor='secondary.light'>
-            <Grid container>
+            <Grid container alignItems='center'>
                     <Grid item xs={12} md={6}>
                         <Box sx={{ maxWidth: { xs: 'none', md: 'sm' }, marginLeft: 'auto', pl: 4, py: 10, pr: 2 }} >
                             <Typography variant='h3'>

@@ -3,13 +3,18 @@ import {Box, Button, Container, Grid, TextField, Tooltip} from "@mui/material";
 import Image from "next/image";
 import Dog from '../public/contactimg.png'
 import stockImg from '../public/stockimg.jpg'
+import {motion} from "framer-motion";
 
 export default function ContactUs() {
     return (
-        <>
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+        >
             <Banner />
             <Location />
-        </>
+        </motion.div>
     )
 }
 

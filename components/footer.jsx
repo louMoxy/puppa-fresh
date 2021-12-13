@@ -3,6 +3,7 @@ import Link from "next/link";
 import {Logo} from "./Logo";
 import {theme} from "../utils/muiTheme";
 import {Facebook, Instagram, Twitter} from "./icons";
+import {FooterLinkBack} from "./FooterLinkBack";
 import Image from '../public/footerBG.png'
 
 const iconStyle = {
@@ -62,6 +63,7 @@ const Footer = () => {
                             </Grid>
                         </Grid>
                     </Grid>
+                    <FooterLinkBack />
                 </Container>
             </footer>
         </Box>

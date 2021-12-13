@@ -1,7 +1,7 @@
 import Navbar from './navbar'
 import Footer from './footer'
 import Head from "next/head";
-import {Container} from "@mui/material";
+import {Container, Typography, Box} from "@mui/material";
 import {theme} from "../utils/muiTheme";
 import {ThemeProvider} from '@mui/material'
 import { motion } from "framer-motion";
@@ -53,6 +53,13 @@ export default function Layout({ children }) {
                 <link rel="stylesheet" href="https://use.typekit.net/kbe1tld.css" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+            <Box p={1} bgcolor='primary.main'>
+                <Container>
+                    <Typography textAlign='center' color='white'>
+                        This is a demo site for <strong><a href='https://www.luckynightstudio.co.uk'>Lucky Night Studio</a></strong>, not a real business
+                    </Typography>
+                </Container>
+            </Box>
             <div style={{ overflow: 'hidden', width: '100vw', minHeight: '100vh', position: 'absolute', zIndex: -1 }}>
                 <Container sx={{ position: 'relative' }}>
                     <div style={{ width: '100%', minHeight: 800, position: 'absolute'}}>
